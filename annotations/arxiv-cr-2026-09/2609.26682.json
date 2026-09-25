@@ -1,0 +1,23 @@
+{
+ "id": "2609.26682",
+ "title_cn": "从对齐到访问控制：GenAI 策略执行框架",
+ "abstract_cn": "生成式 AI（GenAI）应用蓬勃发展，使用户能与大语言模型对话，并创建代表其执行各种任务的智能体。该领域能力的发展速度惊人，而安全与安保被置于次要地位。不幸的是，安全与安保机制较慢的演进已导致真实事故。策略能够定义应用的期望行为，因此是使系统安全合规的基石。然而策略对不同从业者含义不同，造成混淆与孤立的、不足以满足合规的解决方案。本文纵览 GenAI 应用中策略执行的好的、坏的与丑陋的方面。我们提出一个方法学，系统分析并剖析现实中存在的策略定义与执行方式。基于这一有原则的分析，我们给出建议并呼吁社区解决。本文是作者 Nathalie Baracaldo 在 USENIX Security 2026 Enigma 演讲「From Alignment to Access Control: A Unified View of GenAI Policy Enforcement」的配套扩展。",
+ "summary_cn": "立场论文：纵览 GenAI 策略执行现状的好/坏/丑，提出系统剖析在野方法学并给出建议，为 USENIX Security 2026 Enigma 演讲配套扩展。",
+ "topic": "Security of AI",
+ "tags": [
+  "GenAI 治理",
+  "策略执行",
+  "访问控制",
+  "立场论文",
+  "合规"
+ ],
+ "objective_summary": "对 GenAI 应用中策略定义与执行的现有方式做系统剖析，提出统一分析框架与社区行动建议。",
+ "contribution_type": "立场/展望",
+ "evidence_strength": 1,
+ "evidence_note": "纯立场与方法学论述，无经验验证或系统测量。",
+ "novelty": 2,
+ "novelty_note": "GenAI 治理与策略执行已有大量讨论；统一视角的梳理有组织价值但非新机制。",
+ "scope": "适用于 GenAI 应用开发者与治理从业者的策略设计讨论；不提供具体系统的实证结论。",
+ "limitations": "无实验或测量支撑；案例选择可能带作者视角偏置；建议的可操作性未验证。",
+ "artifact": "未提及"
+}

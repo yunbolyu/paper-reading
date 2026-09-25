@@ -1,0 +1,23 @@
+{
+ "id": "2609.18751",
+ "title_cn": "法向对齐：硬标签网络上的改进密码分析符号恢复",
+ "abstract_cn": "在 EUROCRYPT 2025，Carlini 等人在硬标签（S1）深度神经网络的密码分析提取上取得突破，展示了多项式时间的签名与符号恢复。然而 Carlini 等人的符号恢复方法（我们称之为 Future Toggle）相对随机 guessing 只有边际优势，且在更深层产生高置信的错误符号预测；这类错误会触发昂贵的指数时间枚举。本工作提出 Normal Alignment，一种面向 S1 DNN 的新型统计符号恢复方法。借助对偶点处相邻决策面的投影法向量期望长度差，我们的方法通过法向签名对齐推断神经元符号，带来更高投票准确率并把错误预测推到低置信排名；这进一步促成把 Normal Alignment 与硬标签 SOE 扩展结合的更高效组合方法 eSOE + Alignment，消除繁重枚举开销并实现精确的多项式时间全符号恢复。实验表明方法的有效性，尤其在深层：用我们的方法，CIFAR-10（架构 192-64×8-10）与 MNIST（架构 64-96×3-32-10）模型的符号可全多项式时间恢复；而 Carlini 等人的符号恢复方法将分别需要 2^52 或 2^82 次符号猜测的指数时间枚举。",
+ "summary_cn": "改进 EUROCRYPT 2025 硬标签 DNN 符号恢复：Normal Alignment 以法向签名对齐消除指数枚举，CIFAR-10/MNIST 模型全符号多项式时间恢复（原方法需 2^52/2^82 次猜测）。",
+ "topic": "Security of AI",
+ "tags": [
+  "模型提取",
+  "硬标签",
+  "密码分析",
+  "符号恢复",
+  "DNN"
+ ],
+ "objective_summary": "提出基于对偶点法向签名对齐的硬标签 DNN 统计符号恢复方法 Normal Alignment，与 eSOE 组合实现多项式时间全符号恢复并实验对比 Carlini 等人的方法。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "在 CIFAR-10/MNIST 多架构上与 Carlini et al.（EUROCRYPT 2025）直接对比，多项式时间恢复有实证支持；数据集规模有限，更大模型未测。",
+ "novelty": 4,
+ "novelty_note": "对 EUROCRYPT 2025 方法的实质改进：新统计机制（法向签名对齐）把符号恢复从指数枚举降到多项式时间，属该问题上的显著推进。",
+ "scope": "结论适用于硬标签（S1）全连接类 DNN 的符号/签名恢复；对卷积主干、Transformer 与防御加固后的模型未覆盖。",
+ "limitations": "实验限于 CIFAR-10/MNIST 规模模型；对带防御的部署模型与查询预算受限场景未评估；理论保证依赖对偶点几何性质。",
+ "artifact": "未提及"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "2609.26358",
+ "title_cn": "对 SSH Terrapin 攻击的形式化建模",
+ "abstract_cn": "针对 SSH 通道完整性的 Terrapin 攻击（USENIX Security 2024）使用了一种新颖攻击向量：对通道状态的攻击。令人意外的是，并非 SSH 的所有 AEAD 模式都同等受影响，「不受影响」是否意味着「安全」仍是未决问题。既有安全通道形式模型基于有状态加密，但并未定义通道状态是什么、以及它如何作为不同 AEAD 模式的输入。本文提出部分可选拟态下通道完整性的形式模型。应用于 Terrapin 攻击时，被选拟态是 SSH 序列号。模型使用抽象有状态加密接口，并为其提供 SSH 中八个最突出 AEAD 模式的伪代码描述。通过变化 SND oracle，可以建模仅密文（CO；Terrapin 攻击）、已知明文（KPA）与选择明文（CPA）攻击，从而为各 AEAD 模式的安全性建立具体界。我们发现：SSH 中全部三种 Encrypt-then-MAC（EtM）模式与 ChaCha20-Poly1305 在 CO 模型下不安全；AES-GCM 是唯一在全部三种模型变体下安全的密码。越过 Terrapin，我们表明带 CBC 密码的 Encrypt-and-MAC（EaM）即使在 KPA 模型下也安全。特别地，我们描述了一个针对 EaM-CBC 通道完整性的新颖类 BEAST 选择明文攻击，它分离了该方案的 KPA 与 CPA 模型。",
+ "summary_cn": "为 SSH 通道状态提出部分可选拟态形式模型：三种 EtM 与 ChaCha20-Poly1305 在 CO 下不安全、AES-GCM 三模型全安全，并给出分离 KPA/CPA 的 EaM-CBC 新攻击。",
+ "topic": "Formal Methods & Theory",
+ "tags": [
+  "SSH",
+  "Terrapin",
+  "形式化安全",
+  "AEAD",
+  "通道完整性"
+ ],
+ "objective_summary": "构建通道状态可选下的形式完整性模型，为八种 SSH AEAD 模式给出伪代码并在 CO/KPA/CPA 三变体下建立具体安全界，发现 EaM-CBC 的类 BEAST 新攻击。",
+ "contribution_type": "理论/形式化",
+ "evidence_strength": 4,
+ "evidence_note": "完整形式模型与八个 AEAD 模式伪代码、三威胁变体的具体界、新攻击作为模型分离器；对 USENIX Sec 2024 实证攻击给出理论解释。",
+ "novelty": 4,
+ "novelty_note": "首个把「通道状态」作为可选拟态的形式化问题提出，并产出新攻击与「不受影响≠安全」的判定。",
+ "scope": "适用于 SSH 通道层与所建模八种 AEAD 模式；对其他协议的有状态加密需适配。",
+ "limitations": "模型为抽象接口、未覆盖实现侧旁路；界为模型内相对安全而非完整证明；CBC 相关结论依赖具体构造细节。",
+ "artifact": "未提及"
+}

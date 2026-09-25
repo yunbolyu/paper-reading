@@ -1,0 +1,23 @@
+{
+ "id": "2609.25682",
+ "title_cn": "C 到 Rust 的谬误：自动重构不等于内存安全",
+ "abstract_cn": "Rust 已成为领先的系统编程语言，在不牺牲性能的情况下提供强内存与类型安全保证，这使其成为 C 与 C++ 等易受内存安全 bug 影响语言的诱人替代。然而，手工把 C 转换为 Rust 需要深入的 Rust 语言特性领域知识，开发者负担沉重。为此，自动 C 到 Rust 重构工具试图利用静态分析与大语言模型生成安全 Rust 代码。虽然这些工具声称通过减少 unsafe Rust 实现安全，但其与提升安全性的关联并不清楚。本文对各类 C-to-Rust 重构方法的可靠性、安全性与正确性开展综合实证研究。具体而言，我们用来自 NIST Juliet 测试套件的 116 个含内存安全 bug 的 C 程序评估 C2Rust-analyze、CROWN、C2SaferRust 与 FLOURINE。基于这些工具生成的 464 个 Rust 程序，评估聚焦三个方面：重构程序的编译正确性、对原始 C bug 的缓解效果、以及引入额外 Rust bug 的倾向。结果显示：342 个 Rust 程序编译失败，177 个继承原始 C 程序的内存安全 bug，77 个引入新 Rust bug。我们检视工具设计原理并分析各重构方法的错误根因。发现表明：现有自动重构工具交付的是它们所定义的内存安全，而非采用它们时更广泛的内存安全。",
+ "summary_cn": "116 个 Juliet C 程序实证四款 C-to-Rust 重构工具：464 个输出中 342 个编译失败、177 个继承原 bug、77 个引入新 bug，「减少 unsafe」不等于内存安全。",
+ "topic": "Vulnerability & Exploitation",
+ "tags": [
+  "内存安全",
+  "C-to-Rust",
+  "实证研究",
+  "重构工具",
+  "Juliet"
+ ],
+ "objective_summary": "以 Juliet 内存安全用例系统评估四款 C-to-Rust 重构工具的编译正确性、bug 缓解与新 bug 引入，并分析各方法的设计原理与错误根因。",
+ "contribution_type": "实证研究",
+ "evidence_strength": 4,
+ "evidence_note": "116 程序×4 工具=464 输出的系统评估、三个维度统计明确、根因分析；基于标准测试套件可复算。",
+ "novelty": 3,
+ "novelty_note": "有诊断价值的实证修正：系统证伪「减少 unsafe = 更安全」的假设并给出根因分类。",
+ "scope": "结论适用于四款受测工具与 Juliet 类单函数级内存 bug；对大型真实代码库与商用翻译器的代表性有限。",
+ "limitations": "Juliet 用例偏人工构造；工具版本随时间演进；未评估运行时性能与翻译代码的可维护性。",
+ "artifact": "未提及"
+}

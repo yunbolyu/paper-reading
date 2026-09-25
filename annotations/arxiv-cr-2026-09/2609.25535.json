@@ -1,0 +1,23 @@
+{
+ "id": "2609.25535",
+ "title_cn": "FASTAR：可扩展透明知识论证的 FRI 加速器",
+ "abstract_cn": "零知识证明（ZKP）使证明者能在不泄露任何底层秘密的情况下让验证者确信语句有效，是可验证计算的基础原语。ZKP 格局正从依赖可信设置、易受量子对手攻击的经典 zk-SNARK（如 Groth16）向透明、后量子构造（如 zk-STARK）根本转变。这些系统仅靠抗碰撞哈希函数即获得后量子安全，代价是可观的计算开销。特别是，快速 Reed–Solomon 交互式 oracle 接近性证明（FRI）协议主导证明者复杂度，产生海量数据、重复的 Merkle 树承诺与不规则的内存访问模式，限制了在通用处理器上的性能与能效。为此，本工作提出 FASTAR，一个面向 FRI 协议的新型 FPGA 加速器。与在昂贵 ASIC 工艺节点上追求固定高性能内核的加速器不同，FASTAR 采用约束驱动的设计方法学。框架用高层次综合（HLS）实现，由覆盖 FRI 主要阶段——多项式求值、递归 split-and-fold 与 Merkle 树构建——的全参数化构建块组成。从用户提供的板卡规格出发，FASTAR 自动生成适配目标 FPGA 资源与内存约束的硬件实现，无需手工重设计即可跨广泛平台部署。",
+ "summary_cn": "FASTAR：约束驱动、HLS 全参数化的 FRI 协议 FPGA 加速器框架，按板卡资源自动生成多项式求值、split-and-fold 与 Merkle 树硬件（ICCAD 2026）。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "zk-STARK",
+  "FRI",
+  "FPGA 加速",
+  "HLS",
+  "后量子"
+ ],
+ "objective_summary": "提出 FRI 协议的约束驱动 FPGA 加速框架，以 HLS 参数化构建块覆盖各阶段并按目标板卡资源自动生成实现。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "ICCAD 2026 录用、参数化框架与多阶段实现完整；但摘要未给出相对基线的加速比、资源占用或能耗数据。",
+ "novelty": 3,
+ "novelty_note": "FRI 的 FPGA/ASIC 加速已有先例；约束驱动自动生成、跨板卡部署的方法学与全参数化框架是主要新点。",
+ "scope": "结论适用于 FRI 协议各阶段的 FPGA 实现；性能与能效结论取决于具体板卡与配置。",
+ "limitations": "摘要未报告量化加速与对比基线；HLS 相对手写 RTL 的性能差距未讨论；仅覆盖 FRI，不含完整 STARK 证明系统。",
+ "artifact": "未提及"
+}

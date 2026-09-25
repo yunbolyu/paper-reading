@@ -1,0 +1,23 @@
+{
+ "id": "2609.18811",
+ "title_cn": "差分信任：带 epoch 权重更新的多机构匿名凭证",
+ "abstract_cn": "匿名凭证（AC）是隐私保护认证的基础，允许用户在不暴露身份的情况下证明拥有某些属性。最先进的 AC 把凭证签发分散到多个机构，通常采用 Shamir 秘密共享或聚合签名等技术。这增强了系统鲁棒性并消除单点故障，但在凭证签发阶段对所有机构一视同仁。这种统一对待忽视了不同机构可信度或权益的差异；在权益证明网络这类现代去中心化系统中，节点间固有的信任差异无法在凭证签发中利用，问题尤为突出。为解决该局限，我们提出带 epoch 权重的多机构匿名凭证（MA-ACEW）——首个考虑机构权重分布的 MA-AC 模型。关键在于当机构权重分布跨 epoch 变化时 MA-ACEW 能高效更新凭证。其核心是新原语：epoch 绑定 Pointcheval-Sanders 签名（EB-PS），把签名绑定到特定时间 epoch；这一时间绑定同时支持 epoch 内基于权重的凭证签发与跨 epoch 的高效非交互凭证更新。我们形式化 EB-PS 的 EUF-eCMA 不可伪造性要求，并在新假设 STB-GPS 下证明构造满足之；进而证明 MA-ACEW 构造的不可伪造性、匿名性与盲性。最后给出展示 EB-PS 与 MA-ACEW 效率的基准：呈现一个由 128 个部分凭证聚合的凭证平均只需 10.68 毫秒。",
+ "summary_cn": "USENIX Sec'26：首个按机构权重签发并支持跨 epoch 非交互更新的多机构匿名凭证 MA-ACEW，核心为新原语 EB-PS，128 份部分凭证聚合呈现仅 10.68 毫秒。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "匿名凭证",
+  "多机构签名",
+  "权重更新",
+  "Pointcheval-Sanders",
+  "隐私认证"
+ ],
+ "objective_summary": "提出首个考虑机构权重分布的多机构匿名凭证模型 MA-ACEW，以新原语 epoch 绑定 PS 签名实现 epoch 内加权签发与跨 epoch 非交互更新，并给出安全证明与基准。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 4,
+ "evidence_note": "完整形式化（EUF-eCMA、STB-GPS 新假设）+不可伪造/匿名/盲性三性质证明+效率基准（128 份聚合 10.68ms）；USENIX Security '26 录用。",
+ "novelty": 4,
+ "novelty_note": "首个在签发阶段纳入机构权重分布并可跨 epoch 非交互更新的 MA-AC 模型，配套新原语 EB-PS，属匿名凭证方向的实质新构造。",
+ "scope": "结论适用于多机构匿名凭证场景（含 PoS 式权重差异）；安全性依赖新假设 STB-GPS 的成立。",
+ "limitations": "新假设需密码学界进一步检验；权重分布由谁设定与更新的治理问题未展开；仅报告 microbenchmark，未做端到端系统集成评估。",
+ "artifact": "未提及"
+}

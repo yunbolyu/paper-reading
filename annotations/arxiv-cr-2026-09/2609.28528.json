@@ -1,0 +1,22 @@
+{
+ "id": "2609.28528",
+ "title_cn": "GPT Astra 关于差分隐私持续计数下界证明的解读",
+ "abstract_cn": "本说明的目标是，就我们所理解的程度，对 Harrison 与 Leeman（arXiv:2609.17650v01 与 v02）近期介绍的 Astra 关于差分隐私持续计数下界的证明给出详细证明。我们相信存在更自然、更简单的证明，并希望本说明能助力这一努力。在 Harrison 与 Leeman 的初始预印本之前，Bairaktari 与 Larsen（arXiv:2607.00876）已给出优雅证明，对纯差分隐私与近似差分隐私持续计数均给出 Ω(log^(3/2)(n)) 下界，并在私下交流中告知我们他们也有纯差分隐私持续计数最优 Ω(log^2(n)) 的证明。他们随后发表了该 Ω(log^2(n)) 界，现为 Bairaktari、Dahl 与 Larsen 的合作工作（arXiv:2607.00876v3），是其近似差分隐私技术的优雅扩展。尽管两个证明在技术上不同，Astra 的论证使用了与 Bairaktari-Larsen 相关的树几何。",
+ "summary_cn": "对 Harrison-Leeman 介绍的 Astra 差分隐私持续计数下界证明逐细节展开，并梳理其与 Bairaktari-Larsen Ω(log²n) 最优界共用的树几何，属解读性理论笔记。",
+ "topic": "Privacy",
+ "tags": [
+  "差分隐私",
+  "持续计数",
+  "下界证明",
+  "解读笔记"
+ ],
+ "objective_summary": "对 Astra 提出差分隐私持续计数下界的证明给出作者自行整理的详细版本，并对照 Bairaktari-Larsen 等的最优 Ω(log²(n)) 结果说明两者在树几何上的关联。",
+ "contribution_type": "理论/形式化",
+ "evidence_strength": 2,
+ "evidence_note": "纯理论笔记：完整展开他人（含 AI 生成的）证明，无新定理、无经验验证；作者自陈目标是帮助寻找更简单证明。",
+ "novelty": 2,
+ "novelty_note": "对近期他人结果的解读与整理，核心定理归属 Astra 与 Bairaktari-Larsen 等；新意限于证明细节整理与两条证明路线关系的澄清。",
+ "scope": "适用于纯/近似差分隐私持续计数下界这一具体问题的证明理解；不提供新界、新算法或新技术工具。",
+ "limitations": "无新结果；证明忠实性依赖作者对原始表述的理解（自陈 to the best of our understanding）；更简单证明仍属开放。",
+ "artifact": "未提及"
+}

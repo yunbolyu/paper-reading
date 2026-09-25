@@ -1,0 +1,23 @@
+{
+ "id": "2609.27091",
+ "title_cn": "当 Solidity 遇上 LLM：基于 Transformer 的智能合约漏洞检测",
+ "abstract_cn": "区块链技术尤其是以太坊平台的广泛采用，放大了智能合约在去中心化应用中的关键作用。然而合约复杂度与金融价值的上升使其成为网络攻击的首要目标。本文提出一种基于 Transformer 的方法，用于检测以 Solidity 编写的智能合约片段中的漏洞。利用预训练大语言模型的表示能力，我们构建了一个稳健的流水线：首先定义 ground truth 数据集，将代码片段标注为存在漏洞或安全，然后在该数据集上微调基于 BERT 的架构，使模型捕捉 Solidity 代码特有的语法与语义模式。微调后的模型表现强劲，F1 达 92%，凸显了 LLM 适配通过深度上下文理解增强智能合约安全的有效性。",
+ "summary_cn": "构建 Solidity 漏洞片段标注数据集并微调 BERT 架构做合约漏洞检测，F1 达 92%；方法为预训练模型微调的成熟范式应用。",
+ "objective_summary": "定义 Solidity 代码片段漏洞标注数据集，微调基于 BERT 的预训练 Transformer 模型进行片段级漏洞/安全二分类，并报告 F1 等性能。",
+ "topic": "Vulnerability & Exploitation",
+ "tags": [
+  "智能合约",
+  "漏洞检测",
+  "Solidity",
+  "BERT",
+  "微调"
+ ],
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 2,
+ "evidence_note": "自建标注数据集上报告 F1 92%，但未说明数据规模、漏洞类型分布与对比基线，无统计检验。",
+ "novelty": 2,
+ "novelty_note": "预训练语言模型微调做合约漏洞检测已有大量先例，本文属成熟技术在该任务的再次应用，未见新机制。",
+ "scope": "结论适用于片段级 Solidity 漏洞二分类；对跨函数/跨合约的数据流漏洞、可利用性判定与真实审计流程适配未验证。",
+ "limitations": "自建数据集的标注质量与来源未详述；二分类设定无法定位漏洞类型；未与 CodeBERT、Slither 等常用基线对比。",
+ "artifact": "未提及"
+}

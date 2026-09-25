@@ -1,0 +1,23 @@
+{
+ "id": "2609.18866",
+ "title_cn": "汉明理想与 Gröbner 基：ISD 式综合征解码的代数途径",
+ "abstract_cn": "我们研究综合征解码问题的一种代数途径：重构汉明重量约束并将其与信息集解码（ISD）范式结合。我们从汉明簇的系统分析开始，用初等对称函数导出其定义方程；由于这些方程次数可能很高，我们利用初等对称函数的卷积恒等式与基于 Lucas 恒等式的因式分解，推导出带辅助变量、方程次数有界的等价表述。在此建模之上，我们通过 GBDecode 算法把 ISD 范式推广为一种 ISD 式解码策略——只固定信息集的一个子集——以解多元非线性系统为代价缩减组合搜索空间。为处理该代数成分，我们采用 MultiSolve 算法：把单次 Gröbner 基计算替换为对更简单系统的一组计算，这些系统由在有限域上穷举指派数量不定的变元得到，在组合搜索与代数求解间提供可调平衡。我们在与 Classic McEliece 密码系统 NIST 安全类别 1 参数对应的随机二元线性码实例上实验评估该途径，评估这种组合-代数方法的可行性，并为 Gröbner 基技术在 ISD 式解码框架内的实际行为提供洞见。",
+ "summary_cn": "以汉明簇+Lucas 恒等式重构综合征解码的代数途径：GBDecode 部分固定信息集+MultiSolve 分解 Gröbner 计算，在 Classic McEliece NIST 类别 1 参数上评估可行性。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "代数密码分析",
+  "综合征解码",
+  "Gröbner 基",
+  "后量子",
+  "Classic McEliece"
+ ],
+ "objective_summary": "重构汉明重量约束的代数表述并提出部分固定信息集的 ISD 式解码算法 GBDecode 与分治 Gröbner 计算 MultiSolve，在 Classic McEliece NIST 类别 1 参数上评估可行性。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "在 NIST 类别 1 真实参数上做实验评估并报告可行性洞见；未声称攻破，也无与最优 ISD 变体的复杂度/运行时间系统对比。",
+ "novelty": 3,
+ "novelty_note": "重量约束的代数重构与「部分信息集+分治 Gröbner」的可调平衡是综合征解码代数分析中的新组合；ISD 范式与 Gröbner 基技术均成熟。",
+ "scope": "结论适用于随机二元线性码与 Classic McEliece 类参数的代数分析；对结构化码（LDPC/MDPC）与其他后量子族未覆盖。",
+ "limitations": "未取得对既有 ISD 复杂度的改进；穷举指派的组合成本仍高；仅二元码上的初步可行性。",
+ "artifact": "未提及"
+}

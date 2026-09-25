@@ -1,0 +1,23 @@
+{
+ "id": "2609.26132",
+ "title_cn": "面向高阶消失密钥恢复的 zeta 变换求值",
+ "abstract_cn": "Hemmert 针对 Classic McEliece 的密钥恢复算法基于高阶消失。它计算 ker(φ̃_A^(p)) 的基，其中 A = H''' 是攻击中使用的缩短校验矩阵。对 Classic McEliece 参数，该核计算是攻击的主要成本。我们证明定义 φ̃_A^(p) 的求和可以逐列地作为布尔格上的加权上 zeta 变换来求值。由于 φ̃_A^(p) 只需要这些变换的选定层，把求值限制在层 p 与最低所需层之间的带内即可得到 φ̃_A^(p) 及其转置的精确求值。在基于 Wiedemann 的核计算中使用由此得到的截断 zeta 变换求值，可降低重复矩阵–向量乘的代价而不改变整体密钥恢复算法。精确代价取决于 H''' 非主元列的重量分布。因此我们考虑两种模型：全一模型（每个相关二元坐标都激活）与 Bernoulli(1/2) 模型（坐标以概率 1/2 独立激活）。对五个 Classic McEliece 参数集，我们的方法在全一模型下把估计密钥恢复代价降低 14.09–41.19 比特，在 Bernoulli(1/2) 模型下降低 7.25–22.48 比特。",
+ "summary_cn": "把 Classic McEliece 高阶消失密钥恢复的核心算子求值改写为截断加权 zeta 变换，五组参数下估计攻击代价降低 7.25–41.19 比特，不改变算法本身。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "Classic McEliece",
+  "后量子密码分析",
+  "zeta 变换",
+  "密钥恢复",
+  "Wiedemann"
+ ],
+ "objective_summary": "证明高阶消失算子可逐列经带限 zeta 变换精确求值，嵌入 Wiedemann 核计算降低矩阵-向量乘成本，并在两种重量分布模型下估计五组参数的代价降幅。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "精确算法改写加两种代价模型下的参数级估计；无完整实现或实测运行时间。",
+ "novelty": 3,
+ "novelty_note": "对已知攻击（Hemmert）核心开销的实质性算法优化，攻击的渐近框架未变。",
+ "scope": "适用于 Classic McEliece 参数集与该攻击的核计算阶段；不改变攻击整体渐近复杂度。",
+ "limitations": "代价降幅依赖重量分布模型假设（全一或 Bernoulli）；未实现端到端攻击验证估计；对其他码基方案不直接适用。",
+ "artifact": "未提及"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "2609.19091",
+ "title_cn": "当智能体像信标：模型上下文协议流量的 NIDS 规避",
+ "abstract_cn": "模型上下文协议（MCP）把自主 AI 智能体与远程工具间的通信标准化为基于 Streamable HTTP 的交互。这一转变把一类机器生成、已认证、高频的 JSON-RPC 流量直接引入企业网络。企业网络防守者历来把「机器式节律」当作失陷指标（IoC）。本研究显示：在没有显式网络层标识的情况下，MCP 流量在结构与时间上都很像 C2 信标行为——具体是 Cobalt Strike 等高级持续性威胁使用的轮询架构。与「机器生成轮询易于区分」的理论假设相反，我们的测量揭示一个可见性缺口：在受测范围内，标准企业入侵检测系统（IDS）与行为信标评分框架并不把 MCP 远程工具使用归类为异常。通过一个模拟 11 个数学定义流量剖面、跨三种 TLS 条件（不透明、TLS 可检视、明文）的受控 Docker 测试台，我们用 Suricata 签名匹配与 RITA 行为评分评估 MCP JSON-RPC 模式。结果显示：无论时间抖动或 TLS 检视可见性如何，MCP 流量在该配置下均能规避检测——行为信标得分恒为 0.0，在 Emerging Threats（ET）开放规则集下 IDS 内容告警接近零。不透明 TLS 遮蔽 HTTP 内容，却让智能体流量暴露于流级时间分析；但为识别传统恶意软件调校的 NIDS 启发式并不标记生成式 AI 推理回路特有的对数正态到达间隔分布。为填补该缺口，我们提出智能体原生网络标识标准，包括智能体原生 ALPN 与标准化的带外标头。",
+ "summary_cn": "MCP 流量结构与时序酷似 C2 信标：测试台 11 流量剖面×3 种 TLS 条件下 Suricata 告警近零、RITA 信标得分恒为 0.0，提出 Agent-Native ALPN 等标识标准。",
+ "topic": "Systems & Network Security",
+ "tags": [
+  "MCP",
+  "网络流量检测",
+  "C2 信标",
+  "IDS 规避",
+  "协议标准化"
+ ],
+ "objective_summary": "测量 MCP 流量与 C2 信标的结构/时序相似性，在受控 Docker 测试台上检验 Suricata 与 RITA 的检测表现，并提出智能体原生的网络标识标准。",
+ "contribution_type": "实证研究",
+ "evidence_strength": 3,
+ "evidence_note": "受控 Docker 测试台上 11 个流量剖面×3 种 TLS 条件×两套检测工具（Suricata/RITA）的系统测量；自建环境、无在野企业流量验证。",
+ "novelty": 3,
+ "novelty_note": "首次指出 MCP 标准化流量与 C2 信标的结构性混淆并量化 IDS 生态的可见性缺口，问题定位新；测量方法为常规流量分析。",
+ "scope": "结论适用于 Streamable HTTP 的 MCP 远程工具部署与受测 IDS/评分器配置；对深度学习 NIDS 与 Agent 标识方案普及后的场景未评估。",
+ "limitations": "测试台为自建、11 个剖面数学化定义，真实企业环境多样性未覆盖；仅评估 ET 开放规则集；提议标准尚无实现与采纳验证。",
+ "artifact": "未提及"
+}

@@ -1,0 +1,27 @@
+{
+ "id": "2609.19900",
+ "title_cn": "Delphi Scanner：基于 API 序列建模的高效可解释静态恶意软件检测",
+ "abstract_cn": "针对 Windows 可移植可执行（PE）文件的静态恶意软件检测，需要在检测效果、计算效率与分析可解释性之间精细权衡。本文提出 Delphi Scanner，一个面向 Windows PE 文件的静态恶意软件检测系统，在效率与行为解释之间取得平衡。它使用卷积神经网络（CNN）对 Windows API 序列建模以分类 PE，并使用基于规则层的解耦解释层把 API 归入高层恶意能力。在超过 190,000 个 Windows PE 文件上评估，系统达到 95.35% 的准确率，模型占用仅 1.53 MB。在 5,647 个分布外 MalwareBazaar 样本、成对的加壳与脱壳可执行文件以及三种对抗性操纵策略上的鲁棒性实验，证实了其超越训练分布的泛化能力与对保持功能规避技术的抵抗力。总体而言，这些结果表明基于 API 序列的静态分析为本地部署场景下的恶意软件分诊提供了实用、可解释且高效的基础。",
+ "summary_cn": "用 CNN 对 Windows API 序列建模并配规则解释层，Delphi Scanner 在 19 万+ PE 文件上达 95.35% 准确率、模型仅 1.53 MB，并在 5,647 个 OOD 样本与对抗操纵下验证鲁棒性。",
+ "objective_summary": "构建以 CNN 建模 Windows API 序列、以规则层归类恶意能力的静态恶意软件检测系统 Delphi Scanner，在 19 万余 PE 文件、分布外 MalwareBazaar 样本、加壳配对与三种对抗操纵策略上评估。",
+ "topic": "Malware & Attacks",
+ "tags": [
+  "恶意软件检测",
+  "静态分析",
+  "API 序列",
+  "可解释性",
+  "轻量模型"
+ ],
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "190,000+ PE 文件训练/评估、5,647 个 OOD MalwareBazaar 样本、加壳配对与三种对抗操纵策略的系统评测；摘要未列对比基线与统计检验。",
+ "novelty": 2,
+ "novelty_note": "API 序列 CNN 与规则解释层均为成熟技术，贡献在于工程化整合出小体积、可解释、本地部署的实用分诊系统。",
+ "scope": "结论适用于 Windows PE 静态分诊与本地部署场景；对动态行为、内核级恶意软件与非 PE 平台未覆盖。",
+ "limitations": [
+  "准确率口径与类别分布摘要未详述",
+  "API 提取对加壳与新型混淆仍需前置脱壳",
+  "解释层的规则覆盖依赖人工维护"
+ ],
+ "artifact": "未提及"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "2609.25520",
+ "title_cn": "基于规范驱动变异的 WebGPU 动态一致性测试",
+ "abstract_cn": "WebGPU 是向 Web 应用暴露现代 GPU 功能的低级图形与计算 API。官方 WebGPU 一致性测试套件（CTS）聚焦规范允许的良构用法，并不旨在用语义边界情形或对抗输入压测实现。通用模糊测试器则因 WebGPU 复杂的图形栈与多进程架构而难以施展。我们提出 LANTERN，一个规范引导的动态一致性测试框架，使用从 WebGPU 规范提取的约束对 CTS 测试做变异。LANTERN 从 WebIDL 定义提取显式句法 API 规则，并从自然语言规范文本恢复语义约束（如命令顺序与对象生命周期）。选定的规则引导 AST 定位的文本变换，生成有效与故意无效的 CTS 变体。我们在 AddressSanitizer 插桩的 Chromium 上大规模执行所得测试以发现 bug。评估发现了三个可复现 bug，包括一个堆损坏，均在研究时的 Chromium 当前版本上。这些结果表明以句法种子、语义感知的方式变异一致性测试，是 WebGPU 测试期间发现浏览器 bug 的可行途径。",
+ "summary_cn": "LANTERN 用 WebIDL + 规范文本约束变异 WebGPU CTS 测试，在 ASan 插桩 Chromium 上发现 3 个可复现 bug（含一个堆损坏）。",
+ "topic": "Vulnerability & Exploitation",
+ "tags": [
+  "WebGPU",
+  "一致性测试",
+  "规范引导变异",
+  "浏览器漏洞",
+  "模糊测试"
+ ],
+ "objective_summary": "构建从 WebIDL 与自然语言规范提取约束、对 CTS 测试做 AST 定位变异的一致性测试框架，并在插桩 Chromium 上规模化执行以发现实现 bug。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 4,
+ "evidence_note": "在当前版本 Chromium 上发现 3 个可复现 bug（含堆损坏），真实系统真实缺陷，句法/语义约束来源分开验证。",
+ "novelty": 3,
+ "novelty_note": "规范引导变异与 CTS 种子利用为已有组件在 WebGPU 上的新组合；从自然语言规范恢复语义约束的流程有新意。",
+ "scope": "结论适用于 Chromium 的 WebGPU 实现；对其他浏览器实现与更深层语义约束的覆盖未评估。",
+ "limitations": "变异限于 AST 定位文本变换；语义约束抽取依赖规范文本质量；只报告三个 bug，发现率与成本对比未系统量化。",
+ "artifact": "未提及"
+}
