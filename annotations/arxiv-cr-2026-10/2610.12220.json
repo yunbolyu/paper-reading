@@ -1,0 +1,23 @@
+{
+ "id": "2610.12220",
+ "title_cn": "一节点两角色：Rollup 中验证与注意力的同时竞争",
+ "abstract_cn": "只要至少有一个诚实验证者执行其状态转移函数（STF）并对与执行结果不一致的断言提出争议，乐观 rollup 就是安全的。然而允许任何人参与并不构成参与激励：只要所有断言都正确，验证断言正确性就没有报酬。注意力机制通过向执行 rollup STF 的节点付费来解决这一问题，无论其是否参与验证过程。由于单个节点运营者可以用一次执行支撑多个注册身份，按身份付费买不来执行多样性，即独立执行验证的运营者数量。本工作为该问题提供新的建模框架。我们把底层密码原语形式化为一个新概念——带注册证明者的论证（arguments with registered provers）——其性质包括一种据我们所知尚未在现代简洁密码证明中被研究过的不可摊销性。我们设计验证与注意力奖励机制，并把它们分析为两个耦合的 Tullock 式竞争：运营者为所需执行支付一次成本，然后选择在每个角色中部署多少身份。我们量化均衡中可实现的执行多样性范围如何随部署额外注意力身份的边际成本变化。我们用该框架比较两种注意力机制——TRACE（MARBLE 2026）与 Proof of Diligence（AFT 2024）——特别是证明与 Proof of Diligence 不同，TRACE 中上述边际成本可被调整以支持更高的执行多样性。作为案例研究，我们把结果应用于广泛部署的乐观 rollup Arbitrum One。",
+ "summary_cn": "为乐观 rollup 的验证与注意力激励提出新框架：形式化「带注册证明者的论证」原语（含未研究过的不可摊销性），把两类奖励建模为耦合 Tullock 竞争并量化均衡执行多样性；对比 TRACE 与 Proof of Diligence，并应用于 Arbitrum One。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "乐观 rollup",
+  "激励机制",
+  "密码学论证",
+  "Tullock 竞争",
+  "区块链"
+ ],
+ "objective_summary": "形式化乐观 rollup 验证与注意力奖励的激励问题，提出新密码原语与耦合竞争模型，量化均衡执行多样性并比较两种真实机制。",
+ "contribution_type": "理论/形式化",
+ "evidence_strength": 3,
+ "evidence_note": "新原语与均衡刻画的理论分析；TRACE 与 Proof of Diligence 两个真实机制的对比及 Arbitrum One 案例研究；无实证数据或部署测量。",
+ "novelty": 4,
+ "novelty_note": "提出 arguments with registered provers 这一新密码概念及其不可摊销性；把验证/注意力建成耦合竞争并量化执行多样性的均衡范围是该问题的新理论框架。",
+ "scope": "结论适用于乐观 rollup 的验证者激励设计与所建成本/效用模型；对其它 L1/L2 机制需重新校准参数。",
+ "limitations": "均衡分析依赖成本与效用函数假设；未建模操纵者合谋与女巫成本的动态博弈；Arbitrum One 案例为模型化估计而非实测。",
+ "artifact": "未提及"
+}

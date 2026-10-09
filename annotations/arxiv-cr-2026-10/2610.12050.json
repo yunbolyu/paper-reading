@@ -1,0 +1,23 @@
+{
+ "id": "2610.12050",
+ "title_cn": "用边缘 TEE 保护 CPU AI：WebAssembly 的前景与现实挑战",
+ "abstract_cn": "边缘硬件上的 AI 模型包含重要的知识产权（IP），但攻击者在获得 root 权限后可以窃取它。Arm TrustZone 等可信执行环境（TEE）可防御这类操作系统级攻击，但使用难度大：更确切地说，在 TEE 内运行未经修改的应用很困难。本工作提出一个解决方案，使编译为 WebAssembly 的未经修改的 AI 模型能够在 Arm TrustZone 的 OP-TEE 中由 WebAssembly Micro Runtime（WAMR）执行。此外，本工作提供一个 AI 模型分发器：它加密 WebAssembly 二进制，并把加密密钥放入设备的熔丝之一。这样，只有 OP-TEE 中的 WAMR 可信应用（TA）能解密并执行 AI 模型。对该方案的全面评估显示，与手工移植到 OP-TEE 的应用相比，它带来 22% 的额外开销，同时以便捷的移植工作支持未修改 AI 模型的执行，推理延迟额外增加 6%。总体而言，保护 AI 模型 IP 的需求迫切，本工作表明 WebAssembly 在此有切实前景，但仍存在实际挑战。",
+ "summary_cn": "提出在 OP-TEE（Arm TrustZone）内用 WAMR 运行未修改的 WebAssembly 化 AI 模型并以 eFuse 保管加密密钥的方案：较手工移植开销 22%、推理延迟 +6%，实现模型 IP 的 OS 级防护；实用但性能与对抗场景仍有挑战。",
+ "topic": "Systems & Network Security",
+ "tags": [
+  "可信执行环境",
+  "WebAssembly",
+  "TrustZone",
+  "模型 IP 保护",
+  "边缘 AI"
+ ],
+ "objective_summary": "构建基于 WAMR 与 OP-TEE 的系统，使未经修改的 WebAssembly 化 AI 模型在 TrustZone 内执行，并用 eFuse 密钥分发机制保护模型机密性，量化其相对手工移植的开销。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 2,
+ "evidence_note": "单平台原型评估（较手工移植 22% 开销、推理 +6%）；8 页短文，攻击者能力与侧信道场景未评估。",
+ "novelty": 3,
+ "novelty_note": "WASM-in-TEE 已有探索，本工作的组合（未修改模型 + eFuse 密钥分发 + WAMR TA）属已有组件的新场景组合。",
+ "scope": "结论适用于 Arm TrustZone/OP-TEE 与 CPU 级边缘 AI 推理；对 GPU/NPU 模型与物理侧信道强敌未覆盖。",
+ "limitations": "WASM 运行时带来 22% 总开销与 6% 推理延迟；eFuse 密钥的设备初始化与供应链安全未详；未评估对 TEE 逃逸漏洞与物理攻击的抵抗。",
+ "artifact": "未提及"
+}

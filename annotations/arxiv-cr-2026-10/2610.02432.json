@@ -1,0 +1,23 @@
+{
+ "id": "2610.02432",
+ "title_cn": "评估与提升大语言模型对输入序列变化的鲁棒性",
+ "abstract_cn": "生产系统中的大语言模型（LLM）面临提示注入、木马（后门）与自动质量指标被操纵等威胁。本博士论文开发用于评估与改进 LLM 对对抗性输入序列变化鲁棒性的模型、方法与算法。我们提出基于小扰动下逐步输出分布 Jensen-Shannon 散度的生成式鲁棒性度量 R_stab(f)。对局部化攻击我们证明 V(h) ≤ 1 − R_class(h)，其中 R_class(h) 是决策算子 h 在小扰动下保持决策的概率；对非局部化攻击提出校准的经验模型。对 LLM-as-a-Judge 系统，我们开发自适应进化黑盒攻击 ASA，攻击成功率（ASR）最高达 73.8%，在开源模型间迁移至 62.6%。在木马检测挑战赛 2023 数据（Pythia-1.4B）上，代理触发器 REASR 约 0.99，而真实触发器召回约 0.17（基线约 0.14）。在 SaTML CTF 2024 上我们系统化四类多层防御绕过，把 ASR 从 90% 降到 15–25%。5–7 个异构模型组成的委员会把 Gemma-3-4B 的 ASR 降低 47–55 个百分点，7 模型时降至 19.3%。对基于模型上下文协议（MCP）的智能体系统，我们提出以 HMAC 保护包对工具调用认证的 AttestMCP（每次调用低于 0.1 ms）与 Commit Boundary 隔离模式；在 847 个场景的 MCPBench 上把平均 ASR 从 53.7% 降到 12.4%。方法实现于 JudgeGuard、TrojanArmor 软件套件与 MCPSec 模块。",
+ "summary_cn": "博士论文合集：提出鲁棒性度量 R_stab、ASA 攻击（ASR 至 73.8%）与 MCP 工具调用认证 AttestMCP，847 场景上平均 ASR 从 53.7% 降至 12.4%。",
+ "objective_summary": "系统研究 LLM 对输入序列变化的鲁棒性：提出鲁棒性度量与理论界、ASA 进化攻击、木马触发器代理分析、CTF 防御绕过分类、模型委员会防御，以及 MCP 工具调用认证方案 AttestMCP 与隔离模式。",
+ "topic": "Security of AI",
+ "tags": [
+  "LLM 鲁棒性",
+  "提示注入",
+  "后门检测",
+  "LLM-as-a-Judge",
+  "MCP 安全"
+ ],
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "覆盖 TDC 2023、SaTML CTF 2024、MCPBench（847 场景）等多个公开基准并给出具体 ASR/REASR 数字；论文为博士论文合集，各部分评估深度不一、无统一统计检验。",
+ "novelty": 3,
+ "novelty_note": "单一论文内贯通度量、攻击、防御与系统化（四类 CTF 绕过），AttestMCP 与 Commit Boundary 隔离是面向 MCP 的新组合；单项多为已有技术的改进与集成。",
+ "scope": "结论适用于所测模型（Pythia-1.4B、Gemma-3-4B 等）与基准（TDC 2023、SaTML CTF 2024、MCPBench）；对更大规模前沿模型与生产部署的适用性未验证。",
+ "limitations": "论文合集性质，各方法之间缺乏统一威胁模型；部分实验在较小模型上进行；AttestMCP 的 HMAC 密钥管理与部署成本未充分讨论。",
+ "artifact": "未提及"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "2610.02817",
+ "title_cn": "RMCW：基于 Reed–Muller 码的语言模型删除鲁棒水印",
+ "abstract_cn": "大语言模型（LLM）水印为识别特定模型生成的文本提供轻量机制，但在后处理攻击下鲁棒性仍脆弱。删除攻击尤其棘手，因为它们移动 token 位置，破坏观测 token 与原水印位置的对齐。我们提出 RMCW（Reed–Muller 码水印），一种基于 Reed–Muller 码的 LLM 水印方法。与全局码字恢复不同，RMCW 搜索幸存的局部代数结构，利用 Reed–Muller 码字仿射线限制诱导的 Reed–Solomon 一致性。生成时，RMCW 经密钥控制的词表划分向序列注入 Reed–Muller 结构；检测时，把文本映射到带密钥的词表桶，并用 Berlekamp–Welch 检验测试局部子序列的低次 Reed–Solomon 一致性。在 C4 与 ELI5 数据集、OPT-1.3B 与 Llama-3.1-8B-Instruct 上的实验显示，RMCW 保持强干净文本可检测性，并在多种删除与改写攻击下优于或持平基线方法。代码见 https://github.com/BaichengDanny/RMCW。",
+ "summary_cn": "基于 Reed–Muller 码的删除鲁棒水印 RMCW：密钥词表划分注入结构、局部 Berlekamp–Welch 检验检测，在 C4/ELI5 与 OPT-1.3B、Llama-3.1-8B 上删除/改写攻击下优于或持平基线。",
+ "objective_summary": "提出 RMCW，用 Reed–Muller 码的仿射线局部代数结构抵抗删除攻击造成的位置错位，生成端密钥词表划分注入、检测端局部 Berlekamp–Welch 检验，并在两数据集两模型上对比基线。",
+ "topic": "Security of AI",
+ "tags": [
+  "模型水印",
+  "Reed–Muller 码",
+  "删除攻击",
+  "LLM",
+  "溯源"
+ ],
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "C4 与 ELI5、OPT-1.3B 与 Llama-3.1-8B-Instruct 上系统对比多种删除与改写攻击下的基线，报告干净文本可检测性保持；规模中等、无统计检验说明。",
+ "novelty": 3,
+ "novelty_note": "以纠错码局部代数结构对抗位置偏移是水印鲁棒性的新机制组合；与基于窗口/语义的水印相比路线不同，为该问题引入编码理论工具。",
+ "scope": "结论适用于所测两个模型与数据集及文本水印场景；对更强自适应攻击（如知情生成器干扰、跨段拼接）与多语言未覆盖。",
+ "limitations": "低次一致性检验对高比例删除与重写后的残余结构仍有要求；密钥词表划分可能影响文本质量，需权衡；评估未含与最新语义水印的全面对比。",
+ "artifact": "公开"
+}

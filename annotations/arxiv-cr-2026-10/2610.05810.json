@@ -1,0 +1,23 @@
+{
+ "id": "2610.05810",
+ "title_cn": "在线 AutoML：评估 IoT 网络中对抗训练防御策略上的投毒攻击",
+ "abstract_cn": "机器学习（ML）驱动的投毒攻击向量是对手故意插入、损坏或篡改训练数据以扭曲 ML 模型学习过程的对抗行为。目标是降低模型效能、植入偏差、诱发误分类或包含可在部署时被攻击的隐藏后门。在流式场景中，投毒攻击风险显著：模型基于流入数据不断更新。攻击者可逐步向数据流注入有害样本，使模型随时间吸收错误特征而不被及时察觉。因此本研究评估对抗训练（AT）防御策略对投毒攻击（标签翻转与噪声注入）的效力，使用面向 IoT 网络的在线 AutoML 管线。具体地，把两类投毒施加于具备流式能力的 AutoML 学习器（Hoeffding Tree、Leveraging Bagging、Adaptive Random Forest、Hoeffding Adaptive Tree 与 Streaming Random Patches）。在最强投毒率（PR=1.0）下，AT-SRP 在标签翻转投毒下取得最高 F1（0.904），AT-LB 在噪声注入投毒下最高（0.933）。最后使用多种漂移检测方法进行滚动准确率与 prequential 评估。（IEEE CASCON 2026 录用，代码可用）",
+ "summary_cn": "评估流式 AutoML 学习器在标签翻转/噪声注入投毒下的对抗训练防御：最强投毒率下 AT-SRP 标签翻转 F1 0.904、AT-LB 噪声注入 0.933，辅以漂移检测与 prequential 评估（CASCON 2026）。",
+ "topic": "Security of AI",
+ "tags": [
+  "投毒攻击",
+  "对抗训练",
+  "流式学习",
+  "IoT 安全",
+  "漂移检测"
+ ],
+ "objective_summary": "量化对抗训练对两类流式投毒的防护效果并比较五种流式学习器。",
+ "contribution_type": "实证研究",
+ "evidence_strength": 3,
+ "evidence_note": "五种流式学习器、两类投毒、最强投毒率下的系统对比与消融式评估；公开会议论文，代码可用。",
+ "novelty": 2,
+ "novelty_note": "对抗训练与流式投毒皆成熟，贡献是把两者在 IoT 在线 AutoML 管线中的组合评估系统化。",
+ "scope": "结论适用于表格型 IoT 流量流与所选学习器；对自适应投毒者与加密特征未覆盖。",
+ "limitations": "投毒为随机式而非自适应；数据集为经典基准；未评估对抗训练对干净数据的长期代价细节。",
+ "artifact": "公开"
+}

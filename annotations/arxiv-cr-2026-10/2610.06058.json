@@ -1,0 +1,23 @@
+{
+ "id": "2610.06058",
+ "title_cn": "RISC-V 上的高效 HQC 实现：跨层设计空间探索",
+ "abstract_cn": "基于 RISC-V 的软硬件协同设计已成为在嵌入式设备上实现后量子密码（PQC）的成熟方法。其软件可编程性、可扩展指令集架构与可选专用加速器构成广阔设计空间，提供密码敏捷性与部署后更新所需的灵活性。对于入选标准化的 PQC 密钥封装机制 HQC，已发表多个基于 RISC-V 的实现，但这些工作只探索了该设计空间的小子集。我们提出迄今最全面的基于 RISC-V 的 HQC 探索：以一个新的可参数化架构框架为中心，在 FPGA 上跨全部三个 HQC 安全级别刻画 29,920 种不同架构配置。来自该框架的 Pareto 最优配置全面超越最先进的 RISC-V HQC 实现：从 LUT 利用率低 4.8 倍且延迟低 17%，到延迟低 69.6 倍且 LUT 利用率低 30%，同时块 RAM 少至 10.6 倍。",
+ "summary_cn": "构建可参数化 RISC-V 架构框架并探索 29,920 种 HQC 配置（3 安全级、FPGA）：Pareto 最优点从 LUT 省 4.8 倍到延迟快 69.6 倍全面超越 SOTA，BRAM 最多省 10.6 倍。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "后量子密码",
+  "HQC",
+  "RISC-V",
+  "FPGA",
+  "硬件实现"
+ ],
+ "objective_summary": "系统探索 RISC-V 上 HQC 实现的设计空间并给出超越 SOTA 的 Pareto 前沿。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 4,
+ "evidence_note": "29,920 配置的系统性 FPGA 刻画、三安全级全覆盖、与 SOTA 多维对比。",
+ "novelty": 3,
+ "novelty_note": "HQC 的 RISC-V 实现已有多个，贡献在设计空间探索的广度与参数化框架，非新算法。",
+ "scope": "结论限于 HQC 与所选 FPGA 平台；对 ASIC、侧信道防护与更高安全级参数未覆盖。",
+ "limitations": "未评估抗侧信道与故障注入；框架的配置搜索空间仍受架构模板约束；工具链可移植性未报告。",
+ "artifact": "未提及"
+}

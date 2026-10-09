@@ -1,0 +1,23 @@
+{
+ "id": "2610.05335",
+ "title_cn": "StateSync-GKR：机器检查从稀疏 Merkle 状态转换到 GKR 验证的信任链",
+ "abstract_cn": "GKR 可靠性约束关于算术电路的虚假输出声明，但应用还需要其电路编码了预期状态转换的保证。我们在 Isabelle/HOL 中对稀疏 Merkle 成员、非成员与更新机器检查这一连接。编译器模型把电路接受与转换有效性在两个方向关联。可复用协议模型把层归约、线路谓词扩展与导入的 sumcheck 可靠性组装为对显式链事件的界。二者组合把语义无效性传递到该界，且见证在质询实验之前固定。具体解释与前提激活暴露了干净构建会漏掉的空洞假设集。另一个开发构造出精确的四度 KoalaBear 扩展，把基域电路对象提升，并在其声明的质询假设下以分母 p^4 建立组装界。一个可执行 Rust 证明器伴随该模型。Creusot/Why3 契约提供部分实现连接，一个条件定理在未解除的值对应前提下把成功的验证器轨迹关联到模型事件。无论是转录的在线质询分布还是多轮 Fiat-Shamir 归约都未被建立。贡献是在一个证明助理内组合编译器正确性与 GKR 组装模型，并对剩余实现与密码学义务给出显式清单。软件工件：此 https URL（v1.1.0；归档源 DOI：10.5281/zenodo.23136385）。",
+ "summary_cn": "在 Isabelle/HOL 机器检查稀疏 Merkle 状态转换到 GKR 验证的信任链：编译器模型+组装界+KoalaBear 四度扩展，附 Rust 证明器与归档工件，Fiat-Shamir 等义务明示未覆盖。",
+ "topic": "Formal Methods & Theory",
+ "tags": [
+  "形式化验证",
+  "GKR",
+  "Isabelle/HOL",
+  "状态转换",
+  "零知识证明"
+ ],
+ "objective_summary": "用定理证明器形式化状态转换语义与 GKR 证明系统之间的连接并量化剩余信任义务。",
+ "contribution_type": "理论/形式化",
+ "evidence_strength": 4,
+ "evidence_note": "Isabelle/HOL 机器检查、归档 DOI 工件（Zenodo）、可执行 Rust 证明器与显式前提激活；机器检查的证明完整性高。",
+ "novelty": 3,
+ "novelty_note": "编译器正确性与 GKR 组装模型的首个一体化机械化组合是实质推进；各组件（sumcheck、Merkle）形式化均已有。",
+ "scope": "结论覆盖稀疏 Merkle 成员/非成员/更新与所建 GKR 模型；不覆盖 Fiat-Shamir 与实现在线质询分布。",
+ "limitations": "实现连接仅为部分契约；值对应前提未解除；性能与真实系统规模未评估。",
+ "artifact": "公开"
+}

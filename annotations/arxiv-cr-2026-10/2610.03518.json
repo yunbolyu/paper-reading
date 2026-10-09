@@ -1,0 +1,23 @@
+{
+ "id": "2610.03518",
+ "title_cn": "PrivDev：把静态分析数据类型映射到 DPV 隐私词汇",
+ "abstract_cn": "静态分析扫描器能在源码中识别个人数据类型，但缺乏把这些发现连接到标准化隐私词汇的机制。PrivDev 把 Bearer CLI 的 122 个数据类型映射到 Data Privacy Vocabulary Personal Data（DPV-PD）类别，并链接到可能相关的 GDPR 条款。方法对 43 个精确标签匹配使用确定性映射，对其余 79 个非平凡映射使用检索增强的大语言模型（LLM）。产出的 RDF 知识图谱包含 118 个 ODRL 策略资源，经 SHACL 结构验证。工件通过覆盖结构正确性、查询一致性、检索质量、LLM 评估与人工评估的五道互补验证门。人工评估中，九名标注者产出 711 个判断，原始一致性 0.72，Gwet's AC1 为 0.68、AC2 为 0.88。结果表明所提映射合理且可复现，同时揭示扫描器自定义数据类型标签的歧义与 DPV-PD 的覆盖缺口。",
+ "summary_cn": "把 Bearer CLI 122 个数据类型映射到 DPV-PD 与 GDPR 条款（43 确定性+79 检索增强 LLM），产出经 SHACL 验证的 RDF 图；9 人 711 判断、Gwet's AC2 0.88，获 VEM 2026 最佳论文。",
+ "objective_summary": "构建 Bearer CLI 数据类型到 DPV-PD 类别及 GDPR 条款的映射知识图谱，结合确定性匹配与检索增强 LLM，并以结构、查询、检索、LLM 与人工五道验证门评估。",
+ "topic": "Privacy",
+ "tags": [
+  "隐私词汇",
+  "静态分析",
+  "GDPR",
+  "知识图谱",
+  "合规"
+ ],
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "五道互补验证门含人工评估（9 标注者、711 判断、Gwet AC1 0.68/AC2 0.88）与 SHACL 结构验证；映射对象为既有工具词表，规模中等；VEM 2026（CBSoft workshop）最佳论文。",
+ "novelty": 2,
+ "novelty_note": "在两个既有词表/工具间建立系统映射并发布工件，属有用的工程化贡献，方法本身（确定性+检索 LLM）常规。",
+ "scope": "结论适用于 Bearer CLI 数据类型与 DPV-PD 当前版本；对其他扫描器词表、非 GDPR 法域与动态数据处理未覆盖。",
+ "limitations": "79 个非平凡映射依赖 LLM+检索，可能继承模型偏差；DPV-PD 自身存在覆盖缺口；映射需随词表更新维护。",
+ "artifact": "未提及"
+}

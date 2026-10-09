@@ -1,0 +1,23 @@
+{
+ "id": "2610.06061",
+ "title_cn": "PRA-TLS：面向 TEE 的客户端应用证明",
+ "abstract_cn": "可信执行环境（TEE）是保护敏感信息与对机密数据执行计算的安全基础。隔离执行环境（enclave）中的处理由富执行环境（REE）中的不可信应用调用，enclave 再把执行结果返回给不可信应用。即使 enclave 已被证明，enclave 与不可信应用之间的边界仍有风险：篡改输入参数或返回值、操纵应用调用函数的顺序。因此不仅需要确立 enclave 本身的真实性与完整性，还需要确立调用它的应用及其执行环境的真实性与完整性。本研究提出证明调用 enclave 的客户端应用的证明协议 PRA-TLS（便携式远程认证 TLS）。我们引入充当证明者的守护进程：PRA-TLS 用可信 Attester Daemon 在运行时测量主机环境与应用代码状态，把这些测量作为认证证据提供给远程验证者核验。该机制使 enclave 仅在软件环境处于预期状态且应用代码被验证为合法时才继续。我们为所提协议定义攻击模型与安全需求，并使用 Tamarin Prover 形式化评估其安全性。我们还用 Intel SGX 实现 PRA-TLS 原型并评估性能。",
+ "summary_cn": "PRA-TLS 用可信 Attester Daemon 运行时测量主机与应用代码，经 TLS 提供远程验证，令 enclave 仅在环境与调用方应用合法时执行：Tamarin 形式化评估 + SGX 原型实现。",
+ "topic": "Systems & Network Security",
+ "tags": [
+  "TEE",
+  "远程认证",
+  "SGX",
+  "形式化验证",
+  "客户端安全"
+ ],
+ "objective_summary": "扩展 TEE 证明到 REE 侧客户端应用，形式化验证协议并给出 SGX 原型。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "Tamarin 形式化安全评估加 SGX 原型性能实现；威胁模型明确但部署规模有限。",
+ "novelty": 3,
+ "novelty_note": "把证明范围从 enclave 扩展到调用方应用补齐既有空白；机制（测量守护进程+TLS）为组件组合。",
+ "scope": "结论适用于 enclave-应用边界可测量的平台；对 REE 内核被完全攻陷与物理攻击不设防。",
+ "limitations": "Attester Daemon 本身的信任根依赖平台安全；性能开销在重负载下未报告；未覆盖多应用并发证明。",
+ "artifact": "未提及"
+}

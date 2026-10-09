@@ -1,0 +1,23 @@
+{
+ "id": "2610.08301",
+ "title_cn": "Zeppelin：面向 Helium 微控制器的客户端 BFV 加密与解密",
+ "abstract_cn": "物联网（IoT）的增长引发对资源受限传感设备所收集数据隐私的担忧。同态加密（HE）让设备一次性加密数据、不可信云服务器在密文上计算而不见明文，从而解决这一问题。实践中 HE 的内存与计算成本使其难以企及微控制器级设备。先前工作 SEAL-Embedded 用 CKKS 使之可行，但留下三个缺口：其算术全是标量的，即便硬件有向量指令集；从不在设备上解密，客户端无法消费结果；且未探索 BFV——其编码只用整数算术且解密精确。我们提出 Zeppelin：首个使用嵌入式向量指令集的 HE 库、首个支持设备上加密与解密的库、以及首个 MCU 级硬件上的 BFV 实现。Zeppelin 为 ARM Helium 扩展向量化 HE 主要瓶颈数论变换（NTT），并包含一个避免大整数运算与私钥时序泄漏的解密流程。服务器侧适配器把 Zeppelin 密文转换为与 Microsoft SEAL 兼容的格式：设备负责加解密，服务器执行全部同态计算。在搭载 ARM Cortex-M55 的 STM32N6 MCU 上，Zeppelin 以 4.76 毫秒编码并加密 4096 个打包值（对称种子密钥，按 HE 标准 128 位安全），5.38 毫秒解密并解码，内存低于 500 KB；向量化 NTT 引擎比同核等价标量实现快约 2.7 倍。",
+ "summary_cn": "Zeppelin：首个用嵌入式向量指令集、支持 MCU 端到端加解密的 BFV 库——Helium 向量化 NTT 快约 2.7×，STM32N6 上加密 4096 值 4.76 ms、解密 5.38 ms、RAM<500 KB。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "同态加密",
+  "BFV",
+  "微控制器",
+  "NTT 向量化",
+  "嵌入式安全"
+ ],
+ "objective_summary": "实现首个 MCU 级 BFV 同态加密库 Zeppelin：Helium 向量化 NTT、抗时序泄漏的设备端解密与 SEAL 兼容密文格式，并量化 STM32N6 上的时延与内存。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "STM32N6/Cortex-M55 实机量化（4.76 ms 加密 4096 值、5.38 ms 解密、<500 KB RAM、NTT 2.7×）、与 SEAL 格式互操作验证；单硬件平台，无统计检验。",
+ "novelty": 4,
+ "novelty_note": "三项「首个」（嵌入式向量 ISA 的 HE 库、MCU 端到端加解密、MCU 级 BFV），把 HE 客户端能力从 CKKS 近似扩展到 BFV 精确解密，属能力边界的实质推进。",
+ "scope": "结论适用于 Cortex-M55 类带 Helium 的 MCU 与所测 BFV 参数；无 Helium 的低端 MCU、其他参数档位与多方协议场景未覆盖。",
+ "limitations": "设备端只做加解密，同态计算仍在服务器，端云信任分界依赖部署；常量时间声明需逐平台复核；功耗与量产成本未评估。",
+ "artifact": "未提及"
+}

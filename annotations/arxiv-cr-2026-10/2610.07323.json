@@ -1,0 +1,23 @@
+{
+ "id": "2610.07323",
+ "title_cn": "ATLAS-AL：经主动学习的自适应信赖域潜在对抗搜索",
+ "abstract_cn": "学习型系统的安全评估不只是用固定攻击集合测试系统，还需要能高效发现诱发模型失效的输入集合的自适应机制。我们提出 ATLAS（Adaptive Trust-Regions for Latent Adversarial Searches），一个为黑盒学习系统发现对抗输入集的基于查询的框架。ATLAS 把攻击生成转化为主动学习的水平集估计问题，将校准近似与局部-全局采样架构结合，找出输入空间中含对抗样本的区域；发现后在其内采样，构建能代表目标模型鲁棒性状态的对抗集合。在玩具实验上，ATLAS 在有限查询预算下比以往工作恢复更多对抗区域；在标准与对抗训练的 MNIST、CIFAR、ImageNet 模型目标上，ATLAS 产出比其他查询式黑盒攻击（NES、SignHunter、BayesOpt）更具代表性的攻击。ATLAS 是一个自动化红队框架，可用于分析开发中系统的鲁棒性，以及持续审计系统鲁棒性随时间的变化。",
+ "summary_cn": "ATLAS 把黑盒对抗输入集发现形式化为主动学习水平集估计：校准近似+局部-全局采样，在 MNIST/CIFAR/ImageNet 上比 NES、SignHunter、BayesOpt 产出更具代表性的攻击。",
+ "topic": "Security of AI",
+ "tags": [
+  "对抗样本",
+  "黑盒攻击",
+  "主动学习",
+  "水平集估计",
+  "自动化红队"
+ ],
+ "objective_summary": "把对抗输入集合发现形式化为主动学习水平集估计问题，提出结合校准近似与局部-全局采样的查询式框架 ATLAS，在标准与对抗训练模型上与 NES/SignHunter/BayesOpt 比较代表性。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "玩具实验的对抗区域恢复对比与标准/对抗训练 MNIST、CIFAR、ImageNet 目标上对 NES、SignHunter、BayesOpt 的代表性攻击比较；无统计检验，评测指标为自定代表性度量。",
+ "novelty": 3,
+ "novelty_note": "把红队攻击生成重构为水平集估计+主动学习，以「发现并采样对抗区域」取代单点对抗样本搜索，区别于 NES 等逐点黑盒攻击路线。",
+ "scope": "结论适用于图像分类黑盒模型与所测查询式攻击基线；对文本/语音模态、自适应防御与查询预算受限更严的场景未评估。",
+ "limitations": "校准近似在高维输入上的效率未报告；「代表性」度量由作者定义，与下游鲁棒性评估的关联需额外验证；对比基线为经典查询攻击，未含最新自适应方法。",
+ "artifact": "未提及"
+}

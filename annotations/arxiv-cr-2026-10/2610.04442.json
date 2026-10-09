@@ -1,0 +1,22 @@
+{
+ "id": "2610.04442",
+ "title_cn": "CHAMP：基于矩阵乘积的 Cayley 哈希",
+ "abstract_cn": "Cayley 哈希函数通过把消息比特表示为半群中的元素并乘以相应元素来哈希二进制串。这赋予 Cayley 哈希有用的同态性质。本文提出 CHAMP，一个基于有限域上 2×2 矩阵乘积的 Cayley 哈希函数，并讨论其安全性、实现与性能。",
+ "summary_cn": "提出基于有限域上 2×2 矩阵乘积的 Cayley 哈希 CHAMP，讨论其安全性、实现与性能。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "Cayley 哈希",
+  "矩阵半群",
+  "密码构造",
+  "同态性质"
+ ],
+ "objective_summary": "构造基于 2×2 矩阵半群乘积的 Cayley 哈希函数并讨论安全性与实现性能。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 2,
+ "evidence_note": "安全性与性能以讨论为主，摘要未给出第三方密码分析、实现基准细节或与既有构造的系统对比；Cayley 哈希历史上多次被破。",
+ "novelty": 2,
+ "novelty_note": "Cayley 哈希是成熟研究方向，新意在矩阵族参数选择，属增量构造。",
+ "scope": "结论限于所提矩阵族与参数；对更大矩阵、更高维度及未来密码分析的抵抗无法保证。",
+ "limitations": "摘要未报告具体安全归约与界；Cayley 哈希有被路径攻击破解的历史，需独立分析；性能评估细节缺失。",
+ "artifact": "未提及"
+}

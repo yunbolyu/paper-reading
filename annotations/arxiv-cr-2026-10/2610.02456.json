@@ -1,0 +1,23 @@
+{
+ "id": "2610.02456",
+ "title_cn": "SideKernel：macOS 上面向 AI 编码智能体的可用 microVM 沙箱",
+ "abstract_cn": "AI 编码智能体是不受信任的系统组件，却需要在开发者的机器上获得自主权。这一矛盾构成安全问题。沙箱提供隔离环境，但对本地 macOS 开发而言，面向 AI 编码智能体的本地开源选择数量少且使用繁琐。我开展了一项形成性在线用户调查，显示少于 40% 的 AI 编码智能体用户在沙箱中运行智能体，并识别出阻碍沙箱采用的主要可用性障碍。基于这些发现，我开发了 SideKernel：一个面向可用性设计的开源、本地、基于 microVM 的 macOS 智能体沙箱。为评估 SideKernel，我汇编了市场上的沙箱清单并按五条纳入标准过滤，然后围绕调查揭示的可用性障碍派生的 23 项能力测试，对 SideKernel 与满足标准的沙箱做对比分析。我发现只有少数沙箱与 SideKernel 相似，其中 Docker Sandboxes 与 SideKernel 在可用性相关能力上得分最高。本文的另一贡献是对本地开源 microVM macOS 智能体沙箱现有方案空间的综述。",
+ "summary_cn": "用户调查显示不到 40% 的 AI 编码智能体用户使用沙箱；据此开发的 macOS microVM 沙箱 SideKernel 在 23 项可用性能力测试中与 Docker Sandboxes 并列最高分，并综述了该方案空间。",
+ "objective_summary": "通过用户调查识别 AI 编码智能体沙箱的采用障碍，构建开源 microVM macOS 沙箱 SideKernel，并按 23 项能力测试与市面沙箱做对比分析。",
+ "topic": "Security of AI",
+ "tags": [
+  "智能体沙箱",
+  "microVM",
+  "macOS",
+  "可用性",
+  "安全隔离"
+ ],
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "形成性用户调查（样本量未在摘要给出）+市面沙箱按五条纳入标准过滤后的 23 项能力对比测试；为能力/可用性评估，未做对抗性逃逸实验。",
+ "novelty": 2,
+ "novelty_note": "microVM 沙箱是成熟技术，新意在于面向智能体场景的可用性工程与 macOS 本地方案空间的系统梳理。",
+ "scope": "结论适用于 macOS 本地开发场景与所测沙箱清单；能力测试基于功能可用性，不构成安全强度证明；Linux/Windows 未覆盖。",
+ "limitations": "单一作者的硕士实践项目，调查样本有限；评估为能力对比而非攻击面/逃逸测试；与 Docker Sandboxes 的差距分析粒度较粗。",
+ "artifact": "公开"
+}

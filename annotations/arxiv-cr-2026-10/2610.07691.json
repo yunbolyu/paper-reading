@@ -1,0 +1,23 @@
+{
+ "id": "2610.07691",
+ "title_cn": "PerSpectron：用感知机检测微架构攻击的不变足迹",
+ "abstract_cn": "鉴于微架构攻击近年激增，检测它们至关重要。许多攻击表现出其运作本质所要求的内在行为，如制造争用或错误推测。本研究系统考察基于硬件的攻击的微架构足迹，并展示如何用高效的硬件预测器检测和分类它们。我们提出一种利用相关微架构统计量设计硬件神经预测器的方法，能在数据泄露前检测并分类微架构攻击；一旦检测到潜在攻击，即可触发相应对策主动缓解。其硬件检测器 PerSpectron 用感知机学习识别与分类攻击。感知机预测已成功用于分支预测等硬件场景。PerSpectron 性能开销极小：所监控统计量的开销与现有性能监控计数器相当，且运行在处理器关键路径之外，不增加计算时延即提供安全。该系统对 SpectreV1、SpectreV2、SpectreRSB、Meltdown、breakingKSLR、Flush+Flush、Flush+Reload、Prime+Probe 以及缓存攻击标定程序实现了可用的检测率。我们认为大量多样化微架构特征同时提供规避韧性与可解释性——这是以往硬件安全检测器不具备的。我们能在泄露发生前足够早地检测这些攻击，而以往工作只在数据暴露后才触发对策。",
+ "summary_cn": "PerSpectron（MICRO 2020）用感知机在关键路径外检测微架构攻击：覆盖 Spectre V1/V2/RSB、Meltdown、Flush+Reload、Prime+Probe 等，开销与性能计数器相当，可在泄露前触发对策。",
+ "topic": "Systems & Network Security",
+ "tags": [
+  "微架构攻击",
+  "侧信道",
+  "硬件检测",
+  "感知机",
+  "Spectre"
+ ],
+ "objective_summary": "系统刻画微架构攻击的硬件足迹并设计基于感知机的片上预测器 PerSpectron，在数据泄露前检测并分类 Spectre/Meltdown/缓存侧信道等攻击，报告检测率与开销。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 4,
+ "evidence_note": "MICRO 2020 录用；覆盖 SpectreV1/V2/RSB、Meltdown、breakingKSLR、Flush+Flush/Reload、Prime+Probe 及标定程序的多攻击类检测与分类，开销量化（与性能计数器相当、关键路径外）；检测率为定性「可用」描述、无统计检验。",
+ "novelty": 4,
+ "novelty_note": "把分支预测式感知机移植为微架构攻击检测器并强调「泄露前检测」：多样化微架构特征带来规避韧性与可解释性，区别于事后触发对策的既有硬件检测路线。",
+ "scope": "结论适用于所测攻击家族与目标处理器微架构的统计足迹；对未见攻击变体、故意模仿良性足迹的规避攻击及不同微架构的迁移未验证。",
+ "limitations": "检测率为定性描述、未给出精确数值与假报率；训练需覆盖攻击足迹样本；感知机容量有限，复杂多阶段攻击的分类边界未测。",
+ "artifact": "未提及"
+}

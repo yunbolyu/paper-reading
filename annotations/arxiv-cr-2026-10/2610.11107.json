@@ -1,0 +1,23 @@
+{
+ "id": "2610.11107",
+ "title_cn": "在 x86 IoT 网关上加速面向后量子 TLS 1.3 的 HQC",
+ "abstract_cn": "IoT 网关上的后量子 TLS 必须在不显著增加握手延迟、CPU 成本或网络流量的前提下保护大量设备连接。HQC 提供了 ML-KEM 之外的码基多样性，但其计算量与密文尺寸会增加这些成本。我们针对具备 AVX2、AVX-512 与 Galois Field New Instructions（GFNI）的 x86 处理器优化 HQC，并把实现集成进 TLS 1.3。我们把免分支的 Toom-Cook/Karatsuba 乘法扩展到 AVX-512，用 GFNI 加速 Reed-Solomon 译码，改进 Reed-Muller 译码，加速 SHA3-512 与固定重量采样，并把 Frobenius 加性 FFT（FAFFT）乘法移植到 AVX-512 + GFNI 以支持 HQC-5。在 Intel Core i5-1135G7 上，我们的 AVX2 实现较此前最快的 AVX2 结果将解封装降低 11.1–21.5%；AVX-512 实现较 Cabral 等在三个 HQC 参数集上将密钥生成降低 24.9–29.5%、封装降低 10.4–11.1%、解封装降低 20.6–26.1%。我们评估这些实现对 TLS 1.3 握手延迟与服务器、客户端 CPU 成本的影响，以及往返时间（RTT）与带宽的影响。在本地回环 TLS 测量中，AVX-512 HQC-5 实现把握手延迟从 3.22 ms 降到 2.92 ms（对比 Cabral 等）。在 1 Mbit/s 带宽、附加 50 ms RTT 的受限路径上，HQC-5 握手需 243 ms，而 ML-KEM-1024 为 87 ms。这表明在受限链路上，决定剩余握手成本的是 HQC 的公钥与密文尺寸而非实现速度。",
+ "summary_cn": "针对 x86 AVX2/AVX-512/GFNI 优化后量子 KEM HQC 并集成 TLS 1.3：解封装较最快先前实现快 11.1–21.5%；本地回环握手 3.22→2.92 ms，受限链路 HQC-5 握手 243 ms 对 ML-KEM 的 87 ms，瓶颈在尺寸。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "后量子密码",
+  "HQC",
+  "TLS 1.3",
+  "AVX-512 优化",
+  "IoT 网关"
+ ],
+ "objective_summary": "为 x86 向量指令集优化后量子 KEM HQC 并集成 TLS 1.3，测量握手延迟与 CPU 成本，并辨析实现速度与协议尺寸对受限链路握手的影响。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 4,
+ "evidence_note": "与最快先前实现的系统对比（三参数集、多指令集），端到端 TLS 1.3 握手测量含 RTT/带宽扫描；代码公开，投稿 IEEE IoT Journal 未注明录用。",
+ "novelty": 3,
+ "novelty_note": "把 Toom-Cook/Karatsuba、GFNI 译码加速与 FAFFT 等既有技术组合落地到 HQC 与 TLS 1.3 属工程性推进；「瓶颈在尺寸」的结论有诊断价值。",
+ "scope": "结论适用于 x86 桌面级平台（i5-1135G7）与所测网络条件；ARM/嵌入式网关与其它 HQC 参数的行为未测。",
+ "limitations": "受限链路下 HQC-5 握手仍约为 ML-KEM 的 2.8 倍（243 对 87 ms），尺寸劣势未解；单平台测量；投稿未录用。",
+ "artifact": "公开"
+}

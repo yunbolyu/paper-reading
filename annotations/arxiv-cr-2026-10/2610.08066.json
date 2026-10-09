@@ -1,0 +1,23 @@
+{
+ "id": "2610.08066",
+ "title_cn": "面向 NSL-KDD 不平衡入侵检测的系统优化 CNN-Transformer 与 Focal Loss",
+ "abstract_cn": "入侵检测系统（IDS）在 NSL-KDD 这类不平衡数据集上表现挣扎，尤其难以检测稀有的 R2L 与 U2R 攻击。本工作描述一个系统优化、可解释的框架，使用 CNN-Transformer 架构改善高度不平衡数据上的表现。我们用 XGBoost 做特征选择、以 Focal Loss 作为少数类学习的主要机制，并用 Optuna 端到端调参（学习率 0.00042、批大小 256、Focal Loss γ），同时采用审慎的数据划分过程防止数据泄漏。关键的是，消融研究指出：Focal Loss（最优 γ=1.5）大幅提升少数类召回，而加入 SMOTE 等过采样会因过度矫正导致精确率退化。最终模型仅用调好的 Focal Loss，在 NSL-KDD 测试集上达到 98.73% 总体准确率，R2L 与 U2R 的 F1 分别为显著更均衡的 84.63% 与 69.66%，优于基线。我们还做了 SHAP 分析以理解模型预测与显著特征（如 service_http、logged_in），并解释 U2R 精确率因特征重叠而持续偏低。本研究为不平衡 IDS 提供完整管线与方法论洞见，并表明调好的 Focal Loss 可以是充分有效的类别平衡策略。",
+ "summary_cn": "CNN-Transformer+调优 Focal Loss（γ=1.5）处理 NSL-KDD 不平衡入侵检测：总准确率 98.73%，R2L/U2R F1 84.63%/69.66%；消融显示 SMOTE 反致精确率退化，SHAP 解释 U2R 短板。",
+ "topic": "Systems & Network Security",
+ "tags": [
+  "入侵检测",
+  "类别不平衡",
+  "Focal Loss",
+  "NSL-KDD",
+  "可解释性"
+ ],
+ "objective_summary": "构建 XGBoost 特征选择+CNN-Transformer+调优 Focal Loss 的不平衡 IDS 管线，在 NSL-KDD 上消融对比过采样策略并以 SHAP 解释预测。",
+ "contribution_type": "新方法/新技术",
+ "evidence_strength": 3,
+ "evidence_note": "NSL-KDD 测试集上的消融（Focal Loss/SMOTE/过采样）、Optuna 端到端调参与 SHAP 解释，报告 98.73% 准确率与分类别 F1；单一旧数据集、无统计检验、无跨数据集验证。",
+ "novelty": 2,
+ "novelty_note": "组件（CNN-Transformer、Focal Loss、XGBoost、SHAP）均为成熟技术，贡献是把组合调到 NSL-KDD 少数类上的工程化结果与「过采样反致退化」的消融观察。",
+ "scope": "结论适用于 NSL-KDD 类表格化网络流量特征数据集；对现代流量、加密场景与在线部署时延未评估。",
+ "limitations": "NSL-KDD 陈旧且分布偏离真实流量；U2R 样本极少使 F1 方差大；未与最新不平衡学习基线全面对比。",
+ "artifact": "未提及"
+}

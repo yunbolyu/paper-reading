@@ -1,0 +1,23 @@
+{
+ "id": "2610.02805",
+ "title_cn": "从 TS-SUF-2 到 TS-SUF-4：FROST2 门限签名的实用安全增强",
+ "abstract_cn": "门限签名方案对保护区块链与分布式系统中的数字资产至关重要。FROST2 是实用的门限 Schnorr 签名方案，以效率和与标准验证流程的兼容性著称。然而 Bellare 等人（CRYPTO 2022）证明：在 One-More 离散对数假设、静态腐化与集中式密钥生成设定下，FROST2 仅达 TS-SUF-2 安全，这是其易受 TS-UF-3 攻击的后果。本文针对这一安全局限提出增强变体 FROST2+，在与原 FROST2 相同的计算假设下达到 TS-SUF-4 安全级别。FROST2+ 通过集成额外的预处理令牌验证来缓解 TS-UF-3 与 TS-UF-4 弱点，同时保持实用效率。我们证明 FROST2+ 不仅在原分析相同条件下达到 TS-SUF-4，在以 PedPoP 等分布式密钥生成协议初始化时亦然。基于 ZCash FROST 库的基准测试显示，FROST2+ 性能与 FROST2 相当，启用预计算时比 FROST 快约 64–79%。",
+ "summary_cn": "提出 FROST2+：预处理令牌验证使 FROST2 在相同假设下从 TS-SUF-2 升到 TS-SUF-4（含 PedPoP 密钥生成）；ZCash 库实测性能相当，预计算下快 64–79%。",
+ "objective_summary": "分析 FROST2 的 TS-UF-3 弱点，提出集成预处理令牌验证的 FROST2+ 并证明其 TS-SUF-4 安全性（含分布式密钥生成设定），以 ZCash FROST 库基准验证实用性。",
+ "topic": "Crypto & Protocols",
+ "tags": [
+  "门限签名",
+  "Schnorr",
+  "FROST",
+  "安全证明",
+  "区块链"
+ ],
+ "contribution_type": "理论/形式化",
+ "evidence_strength": 4,
+ "evidence_note": "在与 Bellare 等（CRYPTO 2022）相同假设下给出 TS-SUF-4 证明（含 PedPoP 初始化情形），并有 ZCash FROST 库的实测基准（与 FROST2 性能相当、较 FROST 提速 64–79%）。",
+ "novelty": 3,
+ "novelty_note": "在已部署方案上把安全级别从 TS-SUF-2 提升到 TS-SUF-4 是实质性改进；机制为对 FROST 预处理令牌添加验证，属已有构造的强化。",
+ "scope": "结论适用于 FROST2/FROST 系门限 Schnorr 签名及所测 ZCash FROST 库实现；对其他门限 ECDSA 或自适应腐化等不同腐化模型未覆盖。",
+ "limitations": "安全仍基于 One-More 离散对数假设与静态腐化设定；额外令牌验证增加交互开销；基准限于参考实现，未覆盖大规模签名方场景。",
+ "artifact": "未提及"
+}

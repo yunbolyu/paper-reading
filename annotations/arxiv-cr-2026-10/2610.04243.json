@@ -1,0 +1,23 @@
+{
+ "id": "2610.04243",
+ "title_cn": "基于多模型编排的自主 Active Directory 渗透：NeuroSploit 在 GOAD 上的基准研究",
+ "abstract_cn": "Active Directory（AD）仍是企业环境中主流的身份与访问管理基础设施，其沦陷代表内部渗透测试中影响最大的结果。近期工作表明大语言模型（LLM）可以自主开展针对 AD 的假定突破渗透测试，但这些研究使用缺乏结构化护栏、确定性验证与多阶段链编排的独立智能体。我们对 NeuroSploit v4.2.0 进行基准评估——这是一个开源的 Rust 自主渗透测试编排器，攻击对象是 Game of Active Directory（GOAD），一个由 Orange Cyberdefense 维护的故意脆弱多森林 AD 实验环境，含 5 台虚拟机、2 个森林与 3 个域。该编排器调度 22 个 AD 专用智能体与 7 条多阶段攻击链剧本，覆盖完整 AD kill chain：枚举、Kerberoasting、AS-REP roasting、NTLM 中继与强制认证、Kerberos 委派滥用、AD CS 利用（ESC1-ESC8）、MSSQL 链接服务器横向移动、DCSync、跨森林信任滥用与持久化检测。我们在编排器内对 9 个前沿 LLM（Claude Opus 4.6/4.7/4.8、GPT-6 Astra、GPT-5.6 Sol、Grok 4.6、Qwen 3.8、GLM 5.3、Kimi k3）进行基准测试，与直接调用在 14 个技术类别和 7 条链上比较。编排器实现 96–100% 的技术覆盖与 90–97% 的精确率，而直接调用仅覆盖 21–54% 且误报多 3.2 倍。使用 Opus 4.8 完全攻陷三个域耗时 134 分钟，护栏激活阻止了会触发锁定的密码喷洒、未授权 DCSync 转储与越界侦察。结果表明，具备领域专用智能体、POMDP 信念跟踪与跨模型投票的结构化编排，在 AD 渗透测试中显著优于非结构化 LLM 使用。",
+ "summary_cn": "GOAD 靶场评测 NeuroSploit 编排器：9 个前沿 LLM 经 22 个 AD 智能体与 7 条攻击链达 96–100% 覆盖、90–97% 精确率（直接调用仅 21–54%），Opus 4.8 全域攻陷 134 分钟。",
+ "topic": "AI for Security",
+ "tags": [
+  "自动渗透测试",
+  "Active Directory",
+  "LLM 智能体",
+  "GOAD",
+  "攻击编排"
+ ],
+ "objective_summary": "构建 AD 渗透编排器 NeuroSploit 并在标准 GOAD 靶场对 9 个前沿 LLM 做结构化编排与直接调用的对照基准。",
+ "contribution_type": "新工具/系统",
+ "evidence_strength": 3,
+ "evidence_note": "在公认 GOAD 靶场上对 9 个模型、14 类技术、7 条链做系统对照并量化精确率与误报；环境为专用实验靶场，无统计检验，单一作者预印本。",
+ "novelty": 3,
+ "novelty_note": "LLM 自主 AD 渗透已有先例，新意在结构化编排（专用智能体、POMDP 信念跟踪、护栏与跨模型投票）的系统化整合与量化对照。",
+ "scope": "结论适用于 GOAD 类配置的 AD 实验环境；对真实企业网络的防御栈、噪声与变更管理未验证。",
+ "limitations": "靶场为故意脆弱环境，不能外推到加固生产域；护栏与验证规则由作者定义；未评估防御方检测此类编排的能力。",
+ "artifact": "公开"
+}
